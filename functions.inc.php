@@ -55,7 +55,7 @@ function pwdMatch($pwd, $pwdRepeat){
 }
 
 function uidExists($conn, $username, $email) {
-	$sql = "SELECT * FROM account WHERE Account_username = ? OR Account_email = ?;";
+	$sql = "SELECT * FROM Account WHERE Account_username = ? OR Account_email = ?;";
 	$stmt = mysqli_stmt_init($conn);
 	if (!mysqli_stmt_prepare($stmt, $sql)) {
 		header("location: signUp.php?error=stmtfailed");
@@ -80,7 +80,7 @@ function uidExists($conn, $username, $email) {
 }
 
 function createUser($conn, $username, $pwd, $title, $name, $email, $address) {
-	$sql = "INSERT INTO account (Account_username, Account_password, Account_nameTitle, Account_fullname, Account_email, Account_address) VALUES (?, ?, ?, ?, ?, ?);";
+	$sql = "INSERT INTO Account (Account_username, Account_password, Account_nameTitle, Account_fullname, Account_email, Account_address) VALUES (?, ?, ?, ?, ?, ?);";
 	$stmt = mysqli_stmt_init($conn);
 	if (!mysqli_stmt_prepare($stmt, $sql)) {
 		header("location: signUp.php?error=stmtfailed");
@@ -97,7 +97,7 @@ function createUser($conn, $username, $pwd, $title, $name, $email, $address) {
 
 }
 function createPet($conn, $username, $pname, $ptype, $psex, $pdob, $pimg, $pdesexed, $pnotes) {
-	$sql = "INSERT INTO pet (Account_username, Pet_name, Pet_type, Pet_sex, Pet_dob, Pet_image, Pet_desexed, Pet_notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+	$sql = "INSERT INTO Pet (Account_username, Pet_name, Pet_type, Pet_sex, Pet_dob, Pet_image, Pet_desexed, Pet_notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 	$stmt = mysqli_stmt_init($conn);
 	if (!mysqli_stmt_prepare($stmt, $sql)) {
 		header("location: myAccount?error=stmtfailed");
