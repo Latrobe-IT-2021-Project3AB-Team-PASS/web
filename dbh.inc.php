@@ -3,7 +3,7 @@
 $serverName = "aws-thewildvet.ctgmk9otetzz.ap-southeast-2.rds.amazonaws.com";
 $dBUsername = "root";
 $dBPassword = "rootroot";
-$dBName = "thewildvetdb";
+$dBName = "TheWildVetDB";
 
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 
