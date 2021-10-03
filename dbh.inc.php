@@ -1,8 +1,8 @@
 <?php
 
-$serverName = "localhost";
+$serverName = "aws-thewildvet.ctgmk9otetzz.ap-southeast-2.rds.amazonaws.com";
 $dBUsername = "root";
-$dBPassword = "";
+$dBPassword = "rootroot";
 $dBName = "thewildvetdb";
 
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
