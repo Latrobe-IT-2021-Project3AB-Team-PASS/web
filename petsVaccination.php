@@ -24,7 +24,7 @@ th, td {
   </style>
   <form action="" method="post">
 
-    <p>Enter your pets ID to Vaccination & Medication</p>
+    <p>Enter your pets ID to search Vaccination & Medication</p>
     <input type="text" name="pid" placeholder="Enter pets ID">
     <button type="submit" name="search">Search</button>
   </form></br>
