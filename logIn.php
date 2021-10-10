@@ -19,13 +19,13 @@
       <br><input type="password" name="pwd" placeholder="Password">
       <br><button type="submit" name="submit" >Log In</button>
     </form>
-   
+    <div style="text-align:center"><li><a href="forgotPwd.php">Forgot Password?</a></li></div>
   </div>
 
   <section style="text-align:center;">
   <?php
     if (isset($_POST["error"])) {
-      if ($_POST["error"] == "emptyinput") {
+      if ($_POST["error"] == "emptyInput") {
         echo "<p>!!PLEASE FILL IN ALL FIELDS!!</p>";
 
       }
@@ -41,5 +41,4 @@
 </section>
 </body>
 </html>
-
  
