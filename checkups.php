@@ -52,7 +52,7 @@
 					?>
 						
 	</table>
-</section>
+</section></br>
 	<section style="text-align:center">
 		<h2>Parasite Prevention Table</h2>
 	
