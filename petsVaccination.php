@@ -4,9 +4,10 @@
 
 ?>
 <link rel="stylesheet" href="CSS/formstyle.css">
-<title>MY PETS/title></title>
+<title>VACCINATION & MEDICATION</title>
 
-	<h1>PETS VACCINATION</h1>
+	<h1>PETS VACCINATION 
+	<br>& MEDICATION</h1>
 
 <style>
 th, td {
