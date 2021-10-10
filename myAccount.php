@@ -31,10 +31,10 @@
 
 						while ($row = mysqli_fetch_array($query_run)) {
 						
-						echo "<h2>USER NAME: " . $row['Account_username']; 
+						echo "<h2>User name: " . $row['Account_username']; 
 						echo "<h2>Title: " . $row['Account_nameTitle'];
-						echo "<h2>FULL NAME: " . $row['Account_fullname'];	
-						echo "<h2>EMAIL: " . $row['Account_email'];
+						echo "<h2>Full name: " . $row['Account_fullname'];	
+						echo "<h2>Email: " . $row['Account_email'];
 						}
 						
 						}
