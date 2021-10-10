@@ -4,7 +4,7 @@ require_once 'dbh.inc.php';
 
     if(isset($_POST['reset-submit'])){
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $check_email = "SELECT * FROM account WHERE Account_email='$email'";
+        $check_email = "SELECT * FROM Account WHERE Account_email='$email'";
         $run_sql = mysqli_query($conn, $check_email);
         header('location: newPwd.php');
         exit();
@@ -21,7 +21,7 @@ require_once 'dbh.inc.php';
         }else{
             $email = $_SESSION['email']; //getting this email using session
             $encpass = password_hash($pwd, PASSWORD_BCRYPT);
-            $update_pass = "UPDATE `account` SET Account_password = '$encpass' WHERE Account_email = '$email'";
+            $update_pass = "UPDATE `Account` SET Account_password = '$encpass' WHERE Account_email = '$email'";
             $run_query = mysqli_query($conn, $update_pass);
             if($run_query){
                 header('Location: logIn.php');
