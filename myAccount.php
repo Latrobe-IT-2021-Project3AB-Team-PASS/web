@@ -22,7 +22,7 @@
 	</style>
 	<section>
 		<section class="child">
-			
+			<img src="img/user.png" alt="" width="300" height="300">
 					<?php
 						if (isset($_SESSION["username"])) {
 							$uid = $_SESSION['username'];
