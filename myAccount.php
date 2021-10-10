@@ -6,7 +6,7 @@
 <title>MY ACCOUNT</title>
 
 	<h1>MY ACCOUNT</h1>
-	<p>Update & Edit the information you share with the community</p>
+	<h2>Personal Detail</h2>
 	<style>
 		*{
 			box-sizing: border-box;
