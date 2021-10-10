@@ -43,7 +43,7 @@ th, td {
             if (isset($_POST["search"])) {
               $pid = $_POST['pid'];
               
-              $query = "SELECT * FROM `vaccination` where Pet_id = '$pid' ";
+              $query = "SELECT * FROM `Vaccination` where Pet_id = '$pid' ";
               $query_run = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_array($query_run)) {
@@ -82,7 +82,7 @@ th, td {
             if (isset($_POST["search"])) {
               $pid = $_POST['pid'];
               
-              $query = "SELECT * FROM `medication` where Pet_id = '$pid' ";
+              $query = "SELECT * FROM `Medication` where Pet_id = '$pid' ";
               $query_run = mysqli_query($conn, $query);
 
             while ($row = mysqli_fetch_array($query_run)) {
