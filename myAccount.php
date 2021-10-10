@@ -42,7 +42,7 @@
 					
 				</h2>
 			 
-			 <li><a align="left" href="checkups.php">Check-Ups</a></li>
+			 <li><a align="left" href="checkups.php">Check-Ups & Prevention</a></li>
 			 <br><li><a align="left" href="petsVaccination.php">Vaccination & Medication</a></li>
 		
 </section>
