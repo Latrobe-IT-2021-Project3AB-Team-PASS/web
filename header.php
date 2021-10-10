@@ -28,7 +28,7 @@
 						echo "<li><a href='logout.inc.php'>LOG OUT</a></li>";
 					}
 					else{
-						echo "<li><a href='signUp.php'>SIGN UP</a></li>";
+						echo "<li><a href='signUp.php'>JOIN US</a></li>";
 						echo "<li><a href='logIn.php'>LOG IN</a></li>";
 					}
 				?> 
