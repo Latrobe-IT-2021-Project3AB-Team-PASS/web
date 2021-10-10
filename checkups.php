@@ -31,7 +31,7 @@
 					<?php
 						if (isset($_SESSION["username"])) {
 							$uid = $_SESSION['username'];
-						$query = "SELECT * FROM `checkups` where Account_username = '$uid'";
+						$query = "SELECT * FROM `Checkups` where Account_username = '$uid'";
 						$query_run = mysqli_query($conn, $query);
 
 						while ($row = mysqli_fetch_array($query_run)) {
