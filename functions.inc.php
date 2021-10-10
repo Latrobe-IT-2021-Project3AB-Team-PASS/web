@@ -10,16 +10,6 @@ function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat){
 	}
 	return $result;
 }
-function emptyInputPets($pname, $ptype, $psex, $pdob, $pdesexed){
-	$result;
-	if (empty($pname) || empty($ptype) || empty($psex) || empty($pdob) || empty($pdesexed)) {
-		$result = false;
-	}
-	else{
-		$result = true;
-	}
-	return $result;
-}
 
 function invalidUid($username) {
 	$result;
@@ -96,21 +86,7 @@ function createUser($conn, $username, $pwd, $title, $name, $email, $address) {
 	exit();
 
 }
-function createPet($conn, $username, $pname, $ptype, $psex, $pdob, $pimg, $pdesexed, $pnotes) {
-	$sql = "INSERT INTO Pet (Account_username, Pet_name, Pet_type, Pet_sex, Pet_dob, Pet_image, Pet_desexed, Pet_notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
-	$stmt = mysqli_stmt_init($conn);
-	if (!mysqli_stmt_prepare($stmt, $sql)) {
-		header("location: myAccount?error=stmtfailed");
-		exit();
-	}
 
-	mysqli_stmt_bind_param($stmt, "sssssss", $pname, $ptype, $psex, $pdob, $pimg, $pdesexed, $pnotes);
-	mysqli_stmt_execute($stmt);
-	mysqli_stmt_close($stmt);
-	header("location: myAccount?error=none");
-	exit();
-
-}
 
 function emptyInputLogin($username, $pwd){
 	$result;
@@ -124,28 +100,7 @@ function emptyInputLogin($username, $pwd){
 }
 
 function loginUser($conn, $username, $pwd){
-	/*$uidExists = uidExists($conn, $username, $username);
-
-	if ($uidExists === false) {
-		header("location: login.php?error=wronglogin");
-		exit();
-	}
-	$pwdHashed = $uidExists["Account_password"];
-	$checkPwd = password_verify($pwd, $pwdHashed);
-
-	if ($checkPwd === false) {
-		header("location: login.php?error=wronglogin");
-		exit();
-	}
-	else if ($checkPwd === true) {
-		session_start();
-		$_SESSION["userid"] = $uidExists["usersId"];
-		$_SESSION["useruid"] = $uidExists["usersUid"];
-		header("location: home.php");
-		exit();
-	}
-
-   
+ 
        */ // Prepare a select statement
         $sql = "SELECT Account_username, Account_password FROM account WHERE username = ?";
 
