@@ -16,7 +16,7 @@ if (isset($_POST["submit"])) {
 	if(loginUser($conn, $username, $pwd) !== true){
 		session_start();
 		$_SESSION["username"] = $username;
-        header("location: home.php");
+        header("location: myAccount.php");
 	}
 	
 }
