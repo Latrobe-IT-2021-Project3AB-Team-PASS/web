@@ -23,34 +23,71 @@
 	<section>
 		<section class="child">
 			
-				
-				<h2>USER ID：
 					<?php
-						echo $_SESSION['username'];
+						if (isset($_SESSION["username"])) {
+							$uid = $_SESSION['username'];
+						$query = "SELECT * FROM `Account` where Account_username = '$uid'";
+						$query_run = mysqli_query($conn, $query);
+
+						while ($row = mysqli_fetch_array($query_run)) {
+						
+						echo "<h2>USER NAME: " . $row['Account_username']; 
+						echo "<h2>Title: " . $row['Account_nameTitle'];
+						echo "<h2>FULL NAME: " . $row['Account_fullname'];	
+						echo "<h2>EMAIL: " . $row['Account_email'];
+						}
+						
+						}
 					?>
+					
 				</h2>
 			 
 			 <li><a align="left" href="myAccount.php">My Account</a></li>
-			 <br><li><a align="left" href="myPets.php">My Pets</a></li>
+			 <br><li><a align="left" href="petsVaccination.php">Vaccination & Medication</a></li>
 		
 </section>
 
-<h2>Add Pets</h2>
+
 <section>
-	<div class="addPets-form-form">
-		
-		<form action="addPets.inc.php" method="post">
-			
-			<input type="text" name="pname" placeholder="Pet name">
-			<input type="text" name="ptype" placeholder="Pet breeds">
-			<br><input type="text" name="psex" placeholder="Pet sex">
-			<input type="text" name="pdesexed" placeholder="Pet desexed Yes/No"></br><textarea type="text" name="pnotes" placeholder="Pet notes"></textarea>
-			<h2>Pet BOD:
-  			<input type="date" name="pdob" rows="4" cols="50" placeholder="Pet DOB">
-			<input type="file" name="pimg">
-			<button type="submit" name="submit">ADD PETS</button>
-			</h2>
-		</form>
-	</div>
-</section>
+	<h2>My Pets</h2>
+		<style>
+		th, td {
+ 		 border-bottom: 1px solid #ddd;
+		}
+	</style>
+	<table style="width:50%">
+	
+		<tr>	
+			<th>Pet ID</th>		
+			<th>Pet Name</th>
+			<th>Pet Sex</th>
+			<th>Pet Type</th>
+			<th>Pet DOB</th>
+			<th>Pet Desexed</th>
+			<th>Pet Notes</th>
+		</tr>
+					<?php
+						if (isset($_SESSION["username"])) {
+							$uid = $_SESSION['username'];
+						$query = "SELECT * FROM `Pet` where Account_username = '$uid'";
+						$query_run = mysqli_query($conn, $query);
 
+						while ($row = mysqli_fetch_array($query_run)) {
+						?>
+						<tr style="text-align:center">
+							<td><?php echo $row['Pet_id']; ?></td>
+							<td><?php echo $row['Pet_name']; ?></td>
+							<td><?php echo $row['Pet_type'];?></td>
+							<td><?php echo $row['Pet_sex'];	?></td>
+							<td><?php echo $row['Pet_dob']; ?></td>
+							<td><?php echo $row['Pet_desexed']; ?></td>
+							<td><?php echo $row['Pet_notes']; ?></td>
+						</tr>
+						<?php
+						}
+						
+						}
+					?>
+						
+	</table>
+</section>
