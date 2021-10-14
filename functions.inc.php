@@ -120,7 +120,7 @@ function loginUser($conn, $username, $pwd){
 		header("location: logIn.php?error=wronglogin");
 		exit();
 	}
-}
+
 	
 
         $sql = "SELECT Account_username, Account_password FROM account WHERE username = ?";
