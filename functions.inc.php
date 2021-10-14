@@ -45,15 +45,15 @@ function pwdMatch($pwd, $pwdRepeat){
 	return $result;
 }
 
-function uidExists($conn, $username, $email) {
-	$sql = "SELECT * FROM Account WHERE Account_username = ? OR Account_email = ?;";
+function uidExists($conn, $username) {
+	$sql = "SELECT * FROM Account WHERE Account_username = ?;";
 	$stmt = mysqli_stmt_init($conn);
 	if (!mysqli_stmt_prepare($stmt, $sql)) {
 		header("location: signUp.php?error=stmtfailed");
 		exit();
 	}
 
-	mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+	mysqli_stmt_bind_param($stmt, "s", $username);
 	mysqli_stmt_execute($stmt);
 
 
